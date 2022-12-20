@@ -283,6 +283,169 @@ For more information about basic analysis report, check this public URL: https:/
 
 ### Paired analysis report
 
+The metadata can be found in the uploaded metadata.txt
+
+
+### Taxonomic composition
+
+Heatmap of taxonomic composition
+
+The interactive heatmap represents relative abundance of major microbial taxa (columns) in the samples (rows). Using the drop-down list “Heatmap settings” on the right of the heatmap, users can select taxonomic rank of interest. For convenience of comparison between close values, clicking on a cell “freezes” the displayed value of cell on the Legend and additionally the displayed abundance of top 10 taxa of corresponding sample (click again or on the cross near sample name to “unfreeze”). Use the Top control to change the way of major composition display between the top features in the selected sample and the top features across all samples on the average.
+
+![now13](https://user-images.githubusercontent.com/58364462/208781515-92f91b8c-bcb4-4fb8-b2ca-956beac1c65f.png)
+
+
+### Analysis of outliers
+
+Automatic filtering of the user samples with extreme taxonomic composition (based on the combined analysis of user and external data). Analysis of outliers: samples in upper 1% tail of distribution of median distance between each sample and closest 50% of neighbours approximated by normal distribution. List of outliers: ERR3452799
+
+
+### PCoA visualization based on taxonomic composition
+
+Distribution of the samples by their taxonomic composition in reduced dimensionality. The closer the samples (points) on the plot, the more similar their composition. Vectors show the directions in which the levels of the respective major taxa increase. Method of dimension reduction: PCoA (Principal Coordinate Analysis); dissimilarity metric: weighted UniFrac. Clicking on a dot “freezes” the detailed information about the sample on the right of the plot (click again or on the cross near sample name to “unfreeze”). Switch between the display modes with or without outliers and with or without vectors showing major microbial “drivers” using the respective controls.
+
+![now14](https://user-images.githubusercontent.com/58364462/208781564-d32ce00b-1534-4b4d-8f1f-f008fada8b41.png)
+
+![now15](https://user-images.githubusercontent.com/58364462/208781596-c1c5f466-34af-4780-9901-51d73b963179.png)
+
+#### Alpha-diversity
+
+The measure describes the conditional number of taxa in each sample. Metric: Shannon index.
+
+Alpha-diversity
+
+The measure describes the conditional number of taxa in each sample. Metric: Shannon index. Clicking on a dot “freezes” the displayed value on Y axis and additionally the abundance of top 10 taxa (click on it or on the cross near the sample name to “unfreeze”). In addition, the mean and confidence interval value appear when the mouse is over the boxplot. Controls at the top and bottom-right allow to change the displayed data
+
+![now16](https://user-images.githubusercontent.com/58364462/208781706-b2ffb0b6-bdc0-4e56-a686-761eed650270.png)
+
+#### Сomparison
+
+Wilcoxon signed-rank test is applied to compare the alpha-diversity between the two groups. Alpha-diversity does not vary significantly between groups (p= 0.1730709208049953)
+
+
+### Taxa co-occurence analysis
+
+#### Co-occurence graph
+
+Co-occurrence of microbial genera was analyzed basing on correlation analysis of their relative abundance using SPIEC-EASI software. In the graph, vertices show genera; pairs of highly co-occurring genera are connected with blue lines. The graph shows the members of the cooperatives - groups of highly co-occurring genera corresponding to isolated components (singleton vertices are omitted). Parameters of SPIEC-EASI algorithm: Meinshausen and Bühlmann neighbourhood selection method (MB), minimum lambda ratio= 0.1, number of lambda iterations = 20, model selection using StARS algorithm (number of StARS subsamples = 50).
+
+No cooperatives detected. Possible reasons: too few or too many co-occurring taxa or insufficient number of samples to perform the analysis.
+
+
+### Statistical analysis
+
+#### General difference of community structure between two groups
+Test if there are significant differences in overall community composition between the samples of two groups. Method: permutational multivariate analysis of variance (PERMANOVA), beta-diversity metric: weighted UniFrac. The result includes the total number of samples, number of PERMANOVA permutations, p-value for the null hypothesis that there is no difference between the groups, as well as information on the equality of group dispersions (obtained using PERMDISP method with same number of permutations). If the group variations are not equal, the results should be interpreted with caution. Samples-outliers listed in the taxonomic composition section are excluded from this analysis.
+
+![now17](https://user-images.githubusercontent.com/58364462/208782269-b370ce66-832c-4baf-b1bb-5df707732399.png)
+
+#### General difference of metabolic potential structure between two groups
+
+Test if there are significant differences in overall metabolic structure between the samples of two groups. Method: permutational multivariate analysis of variance (PERMANOVA), beta-diversity metric: Bray-Curtis distance. The result includes the total number of samples, number of PERMANOVA permutations, p-value for the null hypothesis that there is no difference between the groups, as well as information on the equality of group dispersions (obtained using PERMDISP method with same number of permutations). If the group variations are not equal, the results should be interpreted with caution. Samples-outliers listed in the taxonomic composition section are excluded from this analysis.
+
+![now18](https://user-images.githubusercontent.com/58364462/208782514-b6a44e63-dc4e-4247-9642-691ae4fd40a3.png)
+
+#### Taxonomic composition
+
+Individual microbial taxa for which relative abundance is significantly different between two groups are identified.
+
+#### Wilcoxon test comparison
+
+Method: Wilcoxon signed rank test. The analysis includes the following steps: filtration of rare taxa (taxon must be present in at least 10% of the samples at the level of >0.2%), Wilcoxon signed rank test applied to each taxon to detect the taxa differentially abundant between the groups. Multiple testing adjustment is performed using Benjamini–Hochberg procedure. Contribution of each taxon to the inter-group difference is estimated using LDA method. Samples-outliers listed in the taxonomic composition section are excluded from this analysis.
+
+#### Cladogram of differences
+
+Tree-like summary of the taxa differentially abundant in two groups constructed using LefSe.
+
+#### All results of the test
+
+All features were discarded during the filtering.
+
+#### Generalized linear mixed effect model
+
+A generalized mixed effects linear model is fitted for each taxon to identify if it is differentially abundant between the groups. "Subject_id", is treated as a random effect. The specific probability distribution is selected heuristically depending on the number of samples. For >100 samples, a zero-inflated negative binomial regression is fitted; in other cases - a negative binomial model. Rare taxa are excluded from the analysis (a taxon must be present in at least 10% of the samples at the level of >0.2%). Multiple testing adjustment is performed using Benjamini–Hochberg procedure. Contribution of each taxon to the inter-group difference is estimated using LDA method. The information about distribution family, terms of the model and sample size is displayed in "Model details" section.
+
+Differentially abundant taxa: Tables of differentially abundant taxa overpresented in the groups can be found in the paired analysis report public URL. Overpresented in group: stool
+
+Overpresented in group: biopsy and the table can be found in the paired analysis report public URL.
+
+#### Cladogram of differences
+
+Tree-like summary of the taxa differentially abundant in two groups constructed using LefSe.
+
+Cladogram
+
+![image](https://user-images.githubusercontent.com/58364462/208783214-60f1631f-0e05-44f0-be9e-3cb33348886d.png)
+
+#### List of differentially abundant taxa 
+
+Increased in stool and increased in biopsy and the list can be found in the paired analysis report public URL
+
+### Excluded features
+
+phylum: p__Fusobacteria, p__Spirochaetes, p__Synergistetes, p__[Thermi], p__Cyanobacteria
+
+class: c__Flavobacteriia, c__Fusobacteriia, c__Chloroplast, c__Spirochaetes, c__4C0d-2, c__Deinococci, c__Opitutae, c__Rubrobacteria, c__Epsilonproteobacteria, c__Synergistia, c__RF3, c__Sphingobacteriia, c__[Saprospirae]
+
+order: o__Fusobacteriales, o__Vibrionales, o__Streptophyta, o__Caulobacterales, o__Thiobacterales, o__ML615J-28, o__Oceanospirillales, o__Spirochaetales, o__I025, o__Aeromonadales, o__Myxococcales, o__Flavobacteriales, o__Deinococcales, o__Sphaerochaetales, o__Alteromonadales, o__[Saprospirales], o__MLE1-12, o__Rhodobacterales, o__Ellin6067, o__YS2, o__Campylobacterales, o__Rickettsiales, o__u(c__Alphaproteobacteria), o__Halanaerobiales, o__Bdellovibrionales, o__Rhodocyclales, o__Rhodospirillales, o__Chromatiales, o__CW040, o__Synergistales, o__Neisseriales, o__Rubrobacterales, o__Gemellales, o__Anaeroplasmatales, o__u(c__Clostridia), o__Hydrogenophilales, o__Natranaerobiales, o__[Cerasicoccales], o__Sphingobacteriales
+
+family: f__Mycobacteriaceae, f__Flavobacteriaceae, f__Dermacoccaceae, f__Acetobacteraceae, f__Sphaerochaetaceae, f__Listeriaceae, f__u(c__Clostridia), f__Campylobacteraceae, f__u(o__Ellin6067), f__Shewanellaceae, f__Rubrobacteraceae, f__mitochondria, f__u(o__Bacillales), f__Bradyrhizobiaceae, f__Caulobacteraceae, f__Spirochaetaceae, f__Leuconostocaceae, f__Gemellaceae, f__Methylocystaceae, f__Hydrogenophilaceae, f__Aerococcaceae, f__Dethiosulfovibrionaceae, f__Gordoniaceae, f__Rhodospirillaceae, f__u(o__Gemellales), f__Halanaerobiaceae, f__Dermabacteraceae, f__Bacteriovoracaceae, f__u(o__Aeromonadales), f__Dietziaceae, f__Burkholderiaceae, f__Neisseriaceae, f__Helicobacteraceae, f__Nocardioidaceae, f__Chitinophagaceae, f__Oceanospirillaceae, f__Geodermatophilaceae, f__Succinivibrionaceae, f__Rs-045, f__Erythrobacteraceae, f__Anaerobrancaceae, f__Leptotrichiaceae, f__Rhodocyclaceae, f__Synergistaceae, f__[Acidaminobacteraceae], f__Cellulomonadaceae, f__Enterococcaceae, f__Streptomycetaceae, f__u(c__Alphaproteobacteria), f__Eubacteriaceae, f__Brucellaceae, f__Deinococcaceae, f__Rhizobiaceae, f__u(o__CW040), f__Sinobacteraceae, f__Colwelliaceae, f__[Chromatiaceae], f__u(o__Pasteurellales), f__Dehalobacteriaceae, f__u(o__YS2), f__u(o__ML615J-28), f__Fusobacteriaceae, f__Intrasporangiaceae, f__[Cerasicoccaceae], f__Sphingobacteriaceae, f__u(o__MLE1-12), f__Actinomycetaceae, f__RF16, f__Vibrionaceae, f__Halothiobacillaceae, f__u(o__Chromatiales), f__u(o__Actinomycetales), f__[Weeksellaceae], f__u(o__Synergistales), f__Aeromonadaceae, f__u(o__Streptophyta), f__u(o__Rhizobiales), f__Phyllobacteriaceae, f__u(o__Lactobacillales), f__Rhodobacteraceae, f__Halomonadaceae, f__u(o__Myxococcales), f__u(o__Thiobacterales), f__Gracilibacteraceae, f__Anaeroplasmataceae, f__Pseudonocardiaceae, f__Xanthomonadaceae, f__Methylobacteriaceae
+
+genus: g__u(f__Streptomycetaceae), g__u(f__[Paraprevotellaceae]), g__Renibacterium, g__u(f__Nocardioidaceae), g__u(f__Peptococcaceae), g__u(f__Phyllobacteriaceae), g__u(o__Synergistales), g__Afipia, g__Megasphaera, g__u(f__Methylobacteriaceae), g__u(f__Rhodobacteraceae), g__u(f__Methylocystaceae), g__Mycetocola, g__Gordonia, g__Anaerofustis, g__Hydrogenophilus, g__Aggregatibacter, g__Oribacterium, g__u(f__Anaerobrancaceae), g__Anaerostipes, g__u(f__Carnobacteriaceae), g__Cloacibacillus, g__Treponema, g__Shuttleworthia, g__Azovibrio, g__Providencia, g__u(f__Sphingomonadaceae), g__Dehalobacterium, g__Helicobacter, g__u(o__Thiobacterales), g__Pseudoxanthomonas, g__Phyllobacterium, g__Sediminibacterium, g__Cloacibacterium, g__u(f__Erythrobacteraceae), g__Rubrobacter, g__u(f__Aeromonadaceae), g__Roseivivax, g__Succinivibrio, g__u(f__Shewanellaceae), g__u(o__Ellin6067), g__Paracoccus, g__u(f__Streptococcaceae), g__Thermoanaerobacterium, g__Sarcina, g__u(f__Gemellaceae), g__Schlegelella, g__u(f__Pseudomonadaceae), g__Halothiobacillus, g__Fusobacterium, g__Weissella, g__Porphyromonas, g__Dietzia, g__Eggerthella, g__Sphingobacterium, g__KD1-23, g__u(f__Rhodospirillaceae), g__Enhydrobacter, g__Selenomonas, g__1-68, g__Acinetobacter, g__Pyramidobacter, g__Kocuria, g__Slackia, g__u(f__[Chromatiaceae]), g__u(o__Streptophyta), g__Pediococcus, g__Peptococcus, g__Enterococcus, g__Halomonas, g__u(f__Geodermatophilaceae), g__Finegoldia, g__Agrobacterium, g__Salinibacterium, g__Delftia, g__u(f__Anaeroplasmataceae), g__u(o__MLE1-12), g__u(f__Helicobacteraceae), g__Atopobium, g__Microbacterium, g__Rhodobacter, g__Leuconostoc, g__Stenotrophomonas, g__u(f__Caulobacteraceae), g__u(f__Xanthomonadaceae), g__Facklamia, g__u(f__Sphingobacteriaceae), g__u(o__Myxococcales), g__Mogibacterium, g__u(f__Colwelliaceae), g__u(f__Halanaerobiaceae), g__02d06, g__Morganella, g__Synergistes, g__Actinobacillus, g__Deinococcus, g__Mitsuokella, g__Arcobacter, g__Moryella, g__u(f__Leptotrichiaceae), g__Campylobacter, g__u(o__Lactobacillales), g__u(f__Propionibacteriaceae), g__u(o__Pasteurellales), g__u(f__Dehalobacteriaceae), g__u(f__Moraxellaceae), g__Christensenella, g__u(f__RF16), g__Mycoplana, g__u(f__Comamonadaceae), g__u(f__Bifidobacteriaceae), g__u(o__Aeromonadales), g__u(f__Leuconostocaceae), g__Holdemania, g__Filifactor, g__Caulobacter, g__u(f__Listeriaceae), g__u(o__Bacillales), g__Vibrio, g__Capnocytophaga, g__Cupriavidus, g__u(f__Aerococcaceae), g__u(f__Bacteriovoracaceae), g__Moraxella, g__Leptotrichia, g__Limnohabitans, g__Anaerotruncus, g__u(f__mitochondria), g__Edwardsiella, g__u(f__Sinobacteraceae), g__Bulleidia, g__Coprobacillus, g__u(f__Acetobacteraceae), g__u(o__Actinomycetales), g__Actinomyces, g__TG5, g__Pseudochrobactrum, g__Comamonas, g__u(o__Gemellales), g__Succiniclasticum, g__u(f__Rs-045), g__Ralstonia, g__u(f__Micrococcaceae), g__Oxalobacter, g__Pseudoramibacter_Eubacterium, g__u(f__Microbacteriaceae), g__Flavisolibacter, g__u(o__Chromatiales), g__Citrobacter, g__u(f__Bradyrhizobiaceae), g__Neisseria, g__Pandoraea, g__Carnobacterium, g__Aquabacterium, g__Peptoniphilus, g__Sphaerochaeta, g__Erwinia, g__Variovorax, g__Trabulsiella, g__u(o__YS2), g__Bradyrhizobium, g__Dermacoccus, g__Alkanindiges, g__u(o__CW040), g__Lactococcus, g__Candidatus Rhodoluna, g__Leucobacter, g__Pedobacter, g__u(f__Intrasporangiaceae), g__Sharpea, g__5-7N15, g__Jeotgalicoccus, g__Mannheimia, g__Alloiococcus, g__Gemella, g__Flexispira, g__vadinHB04, g__Actinomycetospora, g__Sodalis, g__u(o__ML615J-28), g__Sphingobium, g__u(f__Prevotellaceae), g__Lutispora, g__u(f__Oceanospirillaceae), g__Chryseobacterium, g__Myroides, g__Aerococcus, g__u(f__Neisseriaceae), g__u(f__Desulfovibrionaceae), g__Dechloromonas, g__Demequina, g__Thiobacillus, g__Butyrivibrio, g__Brochothrix, g__u(f__Rhizobiaceae), g__Geobacillus, g__Brachybacterium, g__Pseudobutyrivibrio, g__u(o__Rhizobiales), g__Fusibacter, g__u(f__[Cerasicoccaceae]), g__Micrococcus, g__Rubellimicrobium, g__Mycobacterium, g__Vagococcus, g__Janibacter, g__Enterobacter, g__rc4-4, g__Kytococcus, g__Candidatus Accumulibacter, g__RFN20, g__u(c__Clostridia), g__u(c__Alphaproteobacteria), g__u(f__Vibrionaceae), g__Peptostreptococcus, g__Methylobacterium, g__Sphingomonas
+
+species: s__u(g__Mannheimia), s__u(g__Morganella), s__u(g__Aggregatibacter), s__u(g__Sphingobium), g__Stenotrophomonas s__geniculata, s__u(g__Roseivivax), s__u(c__Clostridia), g__Lactobacillus s__zeae, g__Lactobacillus s__ruminis, s__u(f__Anaerobrancaceae), s__u(g__Rubellimicrobium), g__Ruminococcus s__flavefaciens, s__u(g__RFN20), s__u(g__Enterobacter), s__u(g__Bradyrhizobium), s__u(f__Bacteriovoracaceae), s__u(f__Neisseriaceae), g__Lactobacillus s__reuteri, s__u(g__Trabulsiella), s__u(f__Listeriaceae), s__u(g__Caulobacter), s__u(f__Halanaerobiaceae), g__Lactobacillus s__acidipiscis, s__u(g__Mycoplana), g__Paracoccus s__marcusii, s__u(g__Lutispora), s__u(o__Rhizobiales), s__u(f__Rs-045), s__u(g__Peptoniphilus), s__u(o__Lactobacillales), s__u(g__Neisseria), g__Capnocytophaga s__ochracea, s__u(g__Pedobacter), s__u(g__Rhodobacter), g__Streptococcus s__minor, s__u(g__Filifactor), g__Bifidobacterium s__bifidum, s__u(g__Pediococcus), g__Staphylococcus s__succinus, s__u(g__Holdemania), s__u(g__Actinobacillus), s__u(f__[Cerasicoccaceae]), g__Staphylococcus s__haemolyticus, s__u(g__Veillonella), s__u(g__Campylobacter), g__Bulleidia s__moorei, s__u(g__Candidatus Accumulibacter), s__u(f__Sphingobacteriaceae), s__u(g__Limnohabitans), s__u(f__Streptococcaceae), s__u(g__Oribacterium), s__u(f__Intrasporangiaceae), s__u(g__5-7N15), s__u(g__Comamonas), g__Kocuria s__rhizophila, s__u(g__Faecalibacterium), s__u(g__Enterococcus), s__u(f__Methylocystaceae), g__Bifidobacterium s__animalis, s__u(f__Rhodospirillaceae), s__u(g__vadinHB04), s__u(g__Weissella), s__u(g__Jeotgalicoccus), s__u(g__Actinomycetospora), g__Clostridium s__bowmanii, s__u(g__Succiniclasticum), g__Staphylococcus s__pettenkoferi, s__u(o__Aeromonadales), s__u(f__Leptotrichiaceae), s__u(f__Propionibacteriaceae), s__u(g__Atopobium), s__u(g__Moryella), s__u(g__Finegoldia), s__u(g__Stenotrophomonas), s__u(g__Sarcina), s__u(g__Dechloromonas), g__Ruminococcus s__callidus, g__Staphylococcus s__aureus, s__u(g__Thermoanaerobacterium), s__u(o__MLE1-12), s__u(g__Enhydrobacter), s__u(g__Candidatus Rhodoluna), s__u(g__Pseudochrobactrum), s__u(g__Succinivibrio), s__u(g__Dehalobacterium), s__u(g__Halomonas), s__u(f__Dehalobacteriaceae), g__Roseburia s__faecis, s__u(g__Mycobacterium), s__u(f__Rhodobacteraceae), s__u(g__Anaerostipes), s__u(g__Renibacterium), g__Streptococcus s__agalactiae, s__u(f__Acetobacteraceae), s__u(g__Fusibacter), s__u(f__Oceanospirillaceae), g__Coprobacillus s__cateniformis, s__u(g__Alloiococcus), g__Enhydrobacter s__aerosaccus, s__u(g__Pseudobutyrivibrio), s__u(g__Sphaerochaeta), s__u(g__Ralstonia), s__u(g__Gordonia), s__u(g__Porphyromonas), s__u(f__Xanthomonadaceae), s__u(f__Peptococcaceae), s__u(g__rc4-4), s__u(g__Agrobacterium), s__u(o__Streptophyta), s__u(o__Thiobacterales), s__u(f__Erythrobacteraceae), g__[Eubacterium] s__cylindroides, g__Brachybacterium s__conglomeratum, s__u(g__Providencia), g__Pseudomonas s__citronellolis, g__Veillonella s__dispar, g__Peptostreptococcus s__anaerobius, s__u(o__Pasteurellales), s__u(g__Mitsuokella), s__u(g__Salinibacterium), g__Clostridium s__perfringens, s__u(o__Myxococcales), s__u(c__Alphaproteobacteria), g__Kocuria s__palustris, g__Sphingomonas s__yabuuchiae, g__Propionibacterium s__granulosum, s__u(g__Arcobacter), s__u(g__Mogibacterium), g__Sphingomonas s__azotifigens, s__u(f__Nocardioidaceae), s__u(f__[Chromatiaceae]), g__Micrococcus s__luteus, s__u(f__Geodermatophilaceae), g__Eggerthella s__lenta, g__Trabulsiella s__farmeri, g__Haemophilus s__influenzae, s__u(g__Lactococcus), s__u(f__Gemellaceae), s__u(g__Hydrogenophilus), s__u(o__Gemellales), s__u(g__Afipia), s__u(g__Anaerotruncus), s__u(f__Comamonadaceae), s__u(g__Leuconostoc), s__u(f__RF16), s__u(g__Acinetobacter), g__Prevotella s__melaninogenica, s__u(g__Geobacillus), s__u(f__Pseudomonadaceae), g__Corynebacterium s__kroppenstedtii, g__Variovorax s__paradoxus, s__u(g__Aquabacterium), g__Lactobacillus s__mucosae, s__u(f__Helicobacteraceae), s__u(f__Moraxellaceae), s__u(o__CW040), s__u(g__Leucobacter), s__u(f__[Paraprevotellaceae]), s__u(g__Christensenella), s__u(g__Synergistes), s__u(f__Colwelliaceae), s__u(g__Carnobacterium), s__u(g__Fusobacterium), g__Enterococcus s__cecorum, s__u(g__Myroides), g__Sphingobacterium s__mizutaii, s__u(g__Kocuria), s__u(g__Schlegelella), s__u(g__Megasphaera), s__u(g__Dietzia), s__u(g__Bulleidia), g__Aggregatibacter s__segnis, g__Acinetobacter s__lwoffii, g__Oxalobacter s__formigenes, g__Corynebacterium s__bovis, s__u(f__Micrococcaceae), g__Rothia s__dentocariosa, s__u(g__Demequina), s__u(g__Rubrobacter), s__u(g__Flexispira), s__u(g__Cloacibacillus), s__u(g__Propionibacterium), s__u(f__Microbacteriaceae), s__u(g__Peptococcus), s__u(g__Citrobacter), s__u(g__Shuttleworthia), s__u(g__TG5), s__u(g__Vagococcus), s__u(g__Anaerofustis), s__u(o__Actinomycetales), s__u(g__Gemella), s__u(g__02d06), s__u(f__Aerococcaceae), g__Corynebacterium s__durum, s__u(g__Edwardsiella), s__u(g__Paracoccus), s__u(g__Microbacterium), g__Stenotrophomonas s__acidaminiphila, s__u(o__Bacillales), s__u(g__Azovibrio), g__Actinobacillus s__parahaemolyticus, s__u(g__Cupriavidus), s__u(g__Dermacoccus), s__u(g__Sharpea), s__u(f__Carnobacteriaceae), s__u(g__Butyrivibrio), s__u(f__Phyllobacteriaceae), s__u(g__Collinsella), s__u(f__mitochondria), s__u(g__Cloacibacterium), g__Pseudomonas s__viridiflava, g__Serratia s__marcescens, s__u(f__Methylobacteriaceae), g__Pyramidobacter s__piscolens, s__u(g__Brochothrix), s__u(g__Delftia), g__Parabacteroides s__gordonii, s__u(g__Mycetocola), s__u(g__Actinomyces), s__u(g__1-68), g__Pseudoxanthomonas s__mexicana, g__Erwinia s__dispersa, s__u(g__Deinococcus), s__u(f__Aeromonadaceae), g__Clostridium s__hiranonis, s__u(g__Selenomonas), g__Staphylococcus s__epidermidis, g__Pseudomonas s__alcaligenes, g__Helicobacter s__pylori, s__u(g__Slackia), g__Pseudomonas s__fragi, s__u(g__Leptotrichia), g__Coprococcus s__catus, s__u(g__Erwinia), s__u(o__YS2), g__Methylobacterium s__adhaesivum, s__u(g__Halothiobacillus), g__Acinetobacter s__schindleri, g__Streptococcus s__anginosus, g__Acinetobacter s__johnsonii, s__u(g__Flavisolibacter), s__u(g__Pyramidobacter), s__u(o__Ellin6067), s__u(f__Streptomycetaceae), s__u(g__Pandoraea), s__u(f__Sinobacteraceae), s__u(g__Sodalis), s__u(g__Sediminibacterium), g__Pseudomonas s__veronii, s__u(g__Facklamia), s__u(f__Bradyrhizobiaceae), s__u(o__Chromatiales), s__u(g__Alkanindiges), s__u(f__Vibrionaceae), s__u(f__Bifidobacteriaceae), g__Streptococcus s__infantis, s__u(o__Synergistales), s__u(g__KD1-23), s__u(g__Aerococcus), g__Lactobacillus s__agilis, s__u(g__Moraxella), s__u(f__Anaeroplasmataceae), s__u(g__Vibrio), s__u(g__Treponema), s__u(f__Shewanellaceae), s__u(f__Rhizobiaceae), s__u(f__Caulobacteraceae), s__u(f__Leuconostocaceae), s__u(g__Chryseobacterium), s__u(g__Peptostreptococcus), s__u(g__Coprobacillus), g__Alloiococcus s__otitis, s__u(g__Kytococcus), s__u(g__Capnocytophaga), s__u(f__Prevotellaceae), s__u(o__ML615J-28), s__u(g__Janibacter), s__u(g__Thiobacillus), g__Staphylococcus s__equorum, s__u(g__Pseudoramibacter_Eubacterium), s__u(f__Desulfovibrionaceae), s__u(g__Phyllobacterium), s__u(f__Sphingomonadaceae), s__u(g__Micrococcus), s__u(g__Sphingomonas), s__u(g__Methylobacterium)
+
+All results of the test can be found in the uploaded GLMM_test_results_for_taxa.csv
+
+
+### Model details
+
+![now19](https://user-images.githubusercontent.com/58364462/208783967-97ffdf6c-73fe-4a36-8ded-68109eced0d0.png)
+
+#### Functional composition
+
+Individual microbial taxa for which relative abundance is significantly different between two groups are identified.
+
+#### Wilcoxon test comparison
+
+Method: Wilcoxon signed rank test. The analysis includes the following steps: filtration of rare taxa (taxon must be present in at least 10% of the samples at the level of >0.2%), Wilcoxon signed rank test applied to each taxon to detect the taxa differentially abundant between the groups. Multiple testing adjustment is performed using Benjamini–Hochberg procedure. Contribution of each taxon to the inter-group difference is estimated using LDA method. Samples-outliers listed in the taxonomic composition section are excluded from this analysis.
+
+#### Excluded features
+
+KEGG pathways
+
+ko00020 : Citrate cycle (TCA cycle), ko00062 : Fatty acid elongation, ko00100 : Steroid biosynthesis, ko00120 : Primary bile acid biosynthesis, ko00121 : Secondary bile acid biosynthesis, ko00140 : Steroid hormone biosynthesis, ko00196 : Photosynthesis - antenna proteins, ko00232 : Caffeine metabolism, ko00253 : Tetracycline biosynthesis, ko00280 : Valine, leucine and isoleucine degradation, ko00281 : Geraniol degradation, ko00310 : Lysine degradation, ko00311 : Penicillin and cephalosporin biosynthesis, ko00312 : , ko00331 : Clavulanic acid biosynthesis, ko00350 : Tyrosine metabolism, ko00361 : Chlorocyclohexane and chlorobenzene degradation, ko00362 : Benzoate degradation, ko00363 : Bisphenol degradation, ko00364 : Fluorobenzoate degradation, ko00380 : Tryptophan metabolism, ko00401 : Novobiocin biosynthesis, ko00410 : beta-Alanine metabolism, ko00430 : Taurine and hypotaurine metabolism, ko00440 : Phosphonate and phosphinate metabolism, ko00460 : Cyanoamino acid metabolism, ko00471 : D-Glutamine and D-glutamate metabolism, ko00472 : D-Arginine and D-ornithine metabolism, ko00473 : D-Alanine metabolism, ko00510 : N-Glycan biosynthesis, ko00513 : Various types of N-glycan biosynthesis, ko00514 : Other types of O-glycan biosynthesis, ko00521 : Streptomycin biosynthesis, ko00522 : Biosynthesis of 12-, 14- and 16-membered macrolides, ko00531 : Glycosaminoglycan degradation, ko00532 : Glycosaminoglycan biosynthesis - chondroitin sulfate / dermatan sulfate, ko00534 : Glycosaminoglycan biosynthesis - heparan sulfate / heparin, ko00562 : Inositol phosphate metabolism, ko00563 : Glycosylphosphatidylinositol (GPI)-anchor biosynthesis, ko00565 : Ether lipid metabolism, ko00590 : Arachidonic acid metabolism, ko00591 : Linoleic acid metabolism, ko00592 : alpha-Linolenic acid metabolism, ko00601 : Glycosphingolipid biosynthesis - lacto and neolacto series, ko00621 : Dioxin degradation, ko00622 : Xylene degradation, ko00623 : Toluene degradation, ko00625 : Chloroalkane and chloroalkene degradation, ko00626 : Naphthalene degradation, ko00627 : Aminobenzoate degradation, ko00633 : Nitrotoluene degradation, ko00642 : Ethylbenzene degradation, ko00643 : Styrene degradation, ko00785 : Lipoic acid metabolism, ko00791 : Atrazine degradation, ko00830 : Retinol metabolism, ko00901 : Indole alkaloid biosynthesis, ko00905 : Brassinosteroid biosynthesis, ko00906 : Carotenoid biosynthesis, ko00908 : Zeatin biosynthesis, ko00909 : Sesquiterpenoid and triterpenoid biosynthesis, ko00930 : Caprolactam degradation, ko00941 : Flavonoid biosynthesis, ko00943 : Isoflavonoid biosynthesis, ko00945 : Stilbenoid, diarylheptanoid and gingerol biosynthesis, ko00950 : Isoquinoline alkaloid biosynthesis, ko00965 : Betalain biosynthesis, ko00980 : Metabolism of xenobiotics by cytochrome P450, ko00982 : Drug metabolism - cytochrome P450, ko01053 : Biosynthesis of siderophore group nonribosomal peptides, ko01055 : Biosynthesis of vancomycin group antibiotics, ko01056 : Biosynthesis of type II polyketide backbone, ko01057 : Biosynthesis of type II polyketide products, ko03015 : mRNA surveillance pathway, ko03050 : Proteasome, ko03450 : Non-homologous end-joining
+
+KEGG Modules can be found in the paired analysis report public URL
+
+All results of the test can be found in the uploaded Wilcoxon_test_results_for_pathways_and_reactions.csv
+
+
+### Generalized linear mixed effect model
+
+A generalized mixed effects linear model is fitted for each taxon to identify if it is differentially abundant between the groups. "Subject_id", is treated as a random effect. The specific probability distribution is selected heuristically depending on the number of samples. For >100 samples, a zero-inflated negative binomial regression is fitted; in other cases - a negative binomial model. Rare taxa are excluded from the analysis (a taxon must be present in at least 10% of the samples at the level of >0.2%). Multiple testing adjustment is performed using Benjamini–Hochberg procedure. Contribution of each taxon to the inter-group difference is estimated using LDA method. The information about distribution family, terms of the model and sample size is displayed in "Model details" section.
+
+#### Differentially abundant taxa
+
+Tables of differentially abundant taxa overpresented in the groups in stool and biopsy can be found in the paired analysis report public URL
+
+
+### Cladogram of differences
+
+Tree-like summary of the taxa differentially abundant in two groups constructed using LefSe.
+
+Cladogram
+
+![image](https://user-images.githubusercontent.com/58364462/208784580-3d52f391-ef72-4fb1-9f33-802c3fdff973.png)
+
+Cladogram of differences
+
+Tree-like summary of the taxa differentially abundant in two groups constructed using LefSe.
+
+Cladogram
+
+![image](https://user-images.githubusercontent.com/58364462/208784948-03d1da83-efe3-4471-9d16-730874cec486.png)
+
 
 For more information about paired analysis report, check this public URL: https://biota.knomics.ru/public-report?key=z_3FdAdX0G7x_8ch9wkiz5iKjoh85UVj
 
