@@ -458,6 +458,38 @@ The link to the whole project can be found here: https://biota.knomics.ru/public
 
 ### References
 
-1. Efimova, D., et al. (2018) Knomics-Biota - a system for exploratory analysis of human gut microbiota data. BioData Mining 11(1), 25.
+1. Efimova D, Tyakht A, Popenko A, Vasilyev A, Altukhov I, Dovidchenko N, Odintsova V, Klimenko N, Loshkarev R, Pashkova M, Elizarova A, Voroshilova V, Slavskii S, Pekov Y, Filippova E, Shashkova T, Levin E, Alexeev D. Knomics-Biota - a system for exploratory analysis of human gut microbiota data. BioData Min. 2018 Nov 6;11:25. doi: 10.1186/s13040-018-0187-3. PMID: 30450127; PMCID: PMC6220475.
+
+2. Yarygin KS, et al. Resistomap — online visualization of human gut microbiota antibiotic resistome. Bioinformatics. 2017;33(14):2205–6.
+
+3. Yarygin K, Tyakht A, Larin A, Kostryukova E, Kolchenko S, Bitner V, Alexeev D. Abundance profiling of specific gene groups using precomputed gut metagenomes yields novel biological hypotheses. PLoS One. 2017;12(4):e0176154.
+
+4. Klimenko N, et al. Microbiome responses to an uncontrolled short-term diet intervention in the frame of the citizen science project. Nutrients. 2018;10(5):576.
+ 
+5. Odintsova V, Tyakht A, Alexeev D. Guidelines to statistical analysis of microbial composition data inferred from metagenomic sequencing. Curr Issues Mol Biol. 2017;24:17–36.
+
+6. Sudarikov K, Tyakht A, Alexeev D. Methods for the metagenomic data visualization and analysis. Curr. Issues Mol. Biol. 2017;24:37–58.
+
+7. Caporaso JG, et al. QIIME allows analysis of high-throughput community sequencing data. Nat Methods. 2010;7(5):335–6.
+ 
+8. Langille MGI, et al. Predictive functional profiling of microbial communities using 16S rRNA marker gene sequences. Nat Biotechnol. 2013;8:1–10.
+
+9. Abubucker S, Segata N, Goll J, et al. Metabolic Reconstruction for Metagenomic Data and Its Application to the Human Microbiome. Eisen JA, ed. PLoS Computat Biol. 2012;8(6):e1002358.
+
+10. Arumugam M, et al. Enterotypes of the human gut microbiome. Nature. 2011;473(7346):174–80.
+
+11. Kurtz ZD, et al. Sparse and compositionally robust inference of microbial ecological networks. PLoS Comput Biol. 2015;11(5):e1004226.
+
+12. Wilke A, et al. The MG-RAST metagenomics database and portal in 2015. Nucleic Acids Res. 2016;44(Database issue):D590–4.
+
+13. Weber N, et al. Nephele: a cloud platform for simplified, standardized and reproducible microbiome data analysis. Bioinformatics. 2017; 8(2017):1411–3.
+
+14. Zeller G, Tap J, Voigt AY, et al. Potential of fecal microbiota for early-stage detection of colorectal cancer. Mol Syst Biol. 2014;10(11):766.
+
+15. Halfvarson J, Brislawn CJ, Lamendella R, et al. Dynamics of the human gut microbiome in inflammatory bowel disease. Nature Microbiol. 2017;2:17004.
+
+16. Smith MI, Yatsunenko T, Manary MJ, et al. Gut microbiomes of Malawian twin pairs discordant for kwashiorkor. Science (New York, NY). 2013;339(6119):548–54.
+
+17. NIH HMP Working group. The NIH human microbiome project. Genome Res. 2009;19:2317–23.
 
 
