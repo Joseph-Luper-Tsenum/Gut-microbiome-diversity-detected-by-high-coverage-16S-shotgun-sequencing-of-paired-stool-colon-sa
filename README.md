@@ -12,7 +12,7 @@ Russian Federation
 
 ### Introduction
 
-The gut microbiome has a key role in human health and disease (Efimova et al. 2018). However, studying the complex structure and function of the gut microbiome through next generation sequencing is a challenging task and it results to reproducibility issues (Efimova et al. 2018)
+The gut microbiome has a key role in human health and disease (Efimova et al. 2018). However, studying the complex structure and function of the gut microbiome through next generation sequencing is a challenging task and it results to reproducibility issues (Efimova et al. 2018). Here, I analyzed microbiome data to study their complex structure and functions.
 
 ### How Efimova et al. 2018 sequenced gut microbiome data
 
